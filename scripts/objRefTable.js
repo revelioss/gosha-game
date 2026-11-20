@@ -8,15 +8,18 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.TiledBg,
 		C3.Behaviors.solid,
 		C3.Plugins.Text,
+		C3.Behaviors.Anchor,
 		C3.Behaviors.Sin,
 		C3.Plugins.Audio,
 		C3.Plugins.Keyboard,
 		C3.Plugins.Touch,
+		C3.Plugins.Browser,
 		C3.Plugins.System.Cnds.OnLayoutStart,
 		C3.Plugins.Audio.Acts.Stop,
 		C3.Plugins.Audio.Acts.Play,
 		C3.Plugins.Touch.Cnds.OnTouchObject,
 		C3.Plugins.Keyboard.Cnds.OnKey,
+		C3.Plugins.Browser.Acts.RequestFullScreen,
 		C3.Plugins.System.Acts.GoToLayout,
 		C3.Plugins.Audio.Cnds.IsTagPlaying,
 		C3.Plugins.Sprite.Cnds.OnCollision,
@@ -34,6 +37,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Acts.SetX,
 		C3.Plugins.System.Exps.scrollx,
 		C3.Plugins.System.Exps.viewportwidth,
+		C3.Plugins.Sprite.Acts.SetOpacity,
 		C3.Plugins.Sprite.Cnds.CompareWidth,
 		C3.Plugins.System.Cnds.CompareVar,
 		C3.Behaviors.Sin.Acts.SetEnabled,
@@ -44,6 +48,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Behaviors.Flash.Cnds.IsFlashing,
 		C3.Plugins.System.Acts.SubVar,
 		C3.Behaviors.Flash.Acts.Flash,
+		C3.Plugins.Touch.Cnds.IsTouchingObject,
 		C3.Plugins.System.Acts.ResetEventVar
 	];
 };
@@ -57,6 +62,7 @@ self.C3_JsPropNameTable = [
 	{TiledBackground2: 0},
 	{Sprite: 0},
 	{Sprite2: 0},
+	{Anchor: 0},
 	{Text: 0},
 	{Sprite3: 0},
 	{Sprite4: 0},
@@ -101,6 +107,10 @@ self.C3_JsPropNameTable = [
 	{MenuButton: 0},
 	{GameOverTitle: 0},
 	{GameOverInfo: 0},
+	{BtnLeft: 0},
+	{BtnRight: 0},
+	{BtnJump: 0},
+	{Browser: 0},
 	{score: 0},
 	{life: 0}
 ];
@@ -150,5 +160,9 @@ self.InstanceType = {
 	MenuHint: class extends self.ITextInstance {},
 	MenuButton: class extends self.ISpriteInstance {},
 	GameOverTitle: class extends self.ITextInstance {},
-	GameOverInfo: class extends self.ITextInstance {}
+	GameOverInfo: class extends self.ITextInstance {},
+	BtnLeft: class extends self.ISpriteInstance {},
+	BtnRight: class extends self.ISpriteInstance {},
+	BtnJump: class extends self.ISpriteInstance {},
+	Browser: class extends self.IInstance {}
 }
