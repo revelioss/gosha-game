@@ -14,16 +14,30 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Keyboard,
 		C3.Plugins.Touch,
 		C3.Plugins.Browser,
+		C3.Plugins.Mouse,
+		C3.Plugins.LocalStorage,
 		C3.Plugins.System.Cnds.OnLayoutStart,
 		C3.Plugins.Audio.Acts.Stop,
 		C3.Plugins.Audio.Acts.Play,
+		C3.Plugins.LocalStorage.Acts.GetItem,
 		C3.Plugins.Touch.Cnds.OnTouchObject,
+		C3.Plugins.Mouse.Cnds.OnObjectClicked,
 		C3.Plugins.Keyboard.Cnds.OnKey,
 		C3.Plugins.Browser.Acts.RequestFullScreen,
+		C3.Plugins.System.Acts.SetVar,
+		C3.Plugins.System.Exps.max,
+		C3.Plugins.Touch.Exps.TouchCount,
+		C3.Plugins.System.Acts.ResetEventVar,
 		C3.Plugins.System.Acts.GoToLayout,
+		C3.Plugins.LocalStorage.Cnds.OnItemGet,
+		C3.Plugins.System.Exps.float,
+		C3.Plugins.LocalStorage.Exps.ItemValue,
 		C3.Plugins.Audio.Cnds.IsTagPlaying,
-		C3.Plugins.Sprite.Cnds.OnCollision,
+		C3.Plugins.Sprite.Cnds.IsOverlapping,
+		C3.Behaviors.Flash.Cnds.IsFlashing,
 		C3.Plugins.System.Acts.AddVar,
+		C3.Behaviors.Flash.Acts.Flash,
+		C3.Plugins.Sprite.Cnds.OnCollision,
 		C3.Plugins.Sprite.Acts.Destroy,
 		C3.Plugins.Text.Acts.SetText,
 		C3.Plugins.System.Cnds.EveryTick,
@@ -41,15 +55,18 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Cnds.CompareWidth,
 		C3.Plugins.System.Cnds.CompareVar,
 		C3.Behaviors.Sin.Acts.SetEnabled,
-		C3.Plugins.Text.Acts.SetVisible,
+		C3.Plugins.LocalStorage.Acts.SetItem,
 		C3.Plugins.Sprite.Cnds.CompareX,
 		C3.Plugins.Sprite.Exps.X,
 		C3.Behaviors.Platform.Acts.SimulateControl,
-		C3.Behaviors.Flash.Cnds.IsFlashing,
 		C3.Plugins.System.Acts.SubVar,
-		C3.Behaviors.Flash.Acts.Flash,
 		C3.Plugins.Touch.Cnds.IsTouchingObject,
-		C3.Plugins.System.Acts.ResetEventVar
+		C3.Plugins.Text.Acts.SetFontColor,
+		C3.Plugins.System.Exps.rgbex255,
+		C3.Plugins.System.Exps.zeropad,
+		C3.Plugins.Text.Exps.UID,
+		C3.Plugins.Text.Exps.Text,
+		C3.Plugins.System.Acts.SetLayerBackground
 	];
 };
 self.C3_JsPropNameTable = [
@@ -111,8 +128,15 @@ self.C3_JsPropNameTable = [
 	{BtnRight: 0},
 	{BtnJump: 0},
 	{Browser: 0},
+	{Mouse: 0},
+	{LocalStorage: 0},
 	{score: 0},
-	{life: 0}
+	{life: 0},
+	{playtime: 0},
+	{won: 0},
+	{best: 0},
+	{newrec: 0},
+	{touchUsed: 0}
 ];
 
 self.InstanceType = {
@@ -164,5 +188,7 @@ self.InstanceType = {
 	BtnLeft: class extends self.ISpriteInstance {},
 	BtnRight: class extends self.ISpriteInstance {},
 	BtnJump: class extends self.ISpriteInstance {},
-	Browser: class extends self.IInstance {}
+	Browser: class extends self.IInstance {},
+	Mouse: class extends self.IInstance {},
+	LocalStorage: class extends self.IInstance {}
 }
